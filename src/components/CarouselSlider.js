@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
+import SliderContect from './SliderContect';
 
 function CarouselSlider(props) {
     const [imageData, setImageData] = useState([])
@@ -17,14 +18,9 @@ function CarouselSlider(props) {
     useEffect(fetchProducts(), [imageData])
 
     return (
-        <div>
+        <div style={ height = '100%', width = '100%' }>
             {
-                imageData.map(data => 
-                    <>
-                        {
-                            console.log(data.image)
-                        }
-                    </>)
+                imageData.map(data => <SliderContect imageObject={data}/>)
             }
         </div>
     )
